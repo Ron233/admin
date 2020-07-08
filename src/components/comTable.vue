@@ -22,7 +22,7 @@
           @param label [string] 名称
           @param render 配置格式化数据
          -->
-        <!-- <el-table-column type="expand">
+        <el-table-column type="expand">
           <template slot-scope="scope">
             <el-form
             class="table-expand"
@@ -38,7 +38,7 @@
               </el-form-item>
             </el-form>
           </template>
-        </el-table-column> -->
+        </el-table-column>
         <el-table-column type='selection' width='55'></el-table-column>
         <!--
           @name 操作
@@ -77,10 +77,12 @@
           @param sortable [Boolean] 排序
           @param render 配置格式化数据
         -->
-        <div
+        <template
           v-for="(item,index) in tableLabel"
-          :key="index">
+          >
           <el-table-column
+            :key="index"
+            :show-overflow-tooltip='true'
             v-if="item.show"
             :width="item.width ? item.width : ''"
             :align="item.align"
@@ -94,7 +96,7 @@
               <span v-else>{{scope.row[item.param]}}</span>
             </template>
           </el-table-column>
-        </div>
+        </template>
 
     </el-table>
     <el-pagination
