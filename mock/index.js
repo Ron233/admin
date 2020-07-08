@@ -10,4 +10,4 @@ router.use('/test', require('./test'))
 
 app.use('/', router)
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+app.listen(port, () => console.log(port))
